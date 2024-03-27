@@ -1,0 +1,178 @@
+@charset "UTF-8";
+
+/*초기화 코드*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	margin: 0 auto;
+	font-size: 10px;
+}
+
+ul, li{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
+
+/*공통 코드*/
+
+.ct_wrap {
+	margin-top: 30px;
+	text-align: center;
+	font-size: 0;
+}
+
+.ct_wrap a {
+	display: inline-block;
+	min-width: 80px; /* 80px보다 작아지지 X */
+	margin-left: 10px;
+	padding: 10px;
+	border: 1px solid #000;
+	border-radius: 2px;
+	font-size: 1.4rem; /* 루트태그(html)의 1.4배 */
+	text-align: center;
+}
+
+.ct_wrap a:hover {
+	text-decoration: underline;
+}
+
+.ct_wrap a.on { /* a태그면서 on 클래스를 가진 */
+	background: #000;
+	color: #fff;
+}
+
+/*index.jsp*/
+.wrap{
+	width:100%;
+	margin:0 auto;
+}
+
+.customer_list{
+	width:100%;
+	border-top: 1px solid #444;
+	border-collapse: collapse;
+	font-size: 1.5rem;
+}
+.customer_list caption{
+	padding:30px;
+}
+
+.customer_list th, .customer_list td{
+	border-bottom: 1px solid #444;
+	padding: 10px;
+	text-align: center;
+}
+.customer_list td.name > a:hover{
+	text-decoration: underline;
+}
+.customer_page{
+	margin-top: 30px;
+	text-align: center;
+	display: flex;
+	justify-content: center; 
+}
+.customer_page a {
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	box-sizing: border-box;
+	line-height: 32px;
+	}
+.customer_page a:hover{
+	text-decoration: underline;
+}
+
+.customer_page a.bt{
+	font-size: 1.2rem;
+	letter-spacing: -1px;
+}
+.customer_page a.num{
+	font-size: 1.4rem;
+}
+.customer_page a.num.on{
+	border-color: #000;
+	background: #000;
+	color: #fff;
+}
+
+/*view,write.jsp*/
+
+.customer_wrap{
+	width:1000px;
+	margin: 200px;
+	border: 1px solid #eee;
+
+}
+.customer_title{
+	text-align: center;
+	display: block;
+	width:100%;
+	margin: 30px 10px;
+}
+.customer_title{
+	font-size: 3rem;
+}
+.customer_title p{
+	margin-top: 5px;
+	font-size: 2.4rem;
+}
+.customer_write{
+	font-size: 1.5rem;
+}
+.customer_write input{
+	width: 300px;
+	border-style: none;
+	text-align: center;
+}
+.customer_write .form-select {
+	width: 300px;
+	text-align: center;
+}
+
+.customer_write dl{
+	width: 400px;
+		display: flex;
+	justify-content: center;
+	justify-content: space-between;
+	text-align: center;
+	padding: 10px;
+}
+
+.customer_write_wrap{
+	display: flex;
+	flex-flow: column;
+}
+.customer_write_wrap .customer_write{
+	width:1000px;
+	height:500px;
+	flex-flow: column;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
