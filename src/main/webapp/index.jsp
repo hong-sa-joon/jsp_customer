@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -7,11 +7,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="./css/style.css">
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-	crossorigin="anonymous">
 </head>
 <body>
 	<div class="wrap">
@@ -23,39 +18,36 @@
 				<tr>
 					<th>아이디</th>
 					<th>이름</th>
-					<th>사는지역</th>
 					<th>휴대폰번호</th>
-					<th>성별</th>
-					<th>나이</th>
-					<th>사진</th>
-					<th>포인트</th>
 					<th>고객등급</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="customer" items="${customerList}">
 					<tr>
-						<td>${customer.id}</td>
-						<td class="name"><a href="./view?customer_id=${customer_id}">${customer.name}</a></td>
-						<td>${customer.address}</td>
+						<td>${customer.customer_id}</td>
+						<td class="name"><a
+							href="./view?customer_id=${customer.customer_id}">${customer.name}</a></td>
 						<td>${customer.phone}</td>
-						<td>${customer.gender}</td>
-						<td>${customer.age}</td>
-						<td>${customer.img}</td>
-						<td>${customer.point}</td>
 						<td>${customer.grade}</td>
-					</tr>
+						<td class="index_del" style="border-top: 1px solid #000;">
+							<dl style="position: absolute; right: 0;">
+								<dt>
+									<a onclick="chkDelete(${customer.customer_id}); return false;">삭제하기</a>
+								</dt>
+							</dl>
+						</td>
 				</c:forEach>
 			</tbody>
 		</table>
 		<div class="ct_wrap ct_list">
-			<a href="write">등록하기</a>
+			<a href="write">고객등록</a>
 			<div class="customer_page">
 				<a href="#" class="bt first">&lt;&lt;</a> <a href="#"
-					class="bt prev">&lt;</a> <a href="#" class="num on">1</a> <a
+					class="ct prev">&lt;</a> <a href="#" class="num on">1</a> <a
 					href="#" class="num">2</a> <a href="#" class="num">3</a> <a
 					href="#" class="num">4</a> <a href="#" class="num">5</a> <a
-					href="#" class="bt next">&gt;</a> <a href="#" class="bt last">&gt;&gt;</a>
+					href="#" class="ct next">&gt;</a> <a href="#" class="ct last">&gt;&gt;</a>
 			</div>
 		</div>
 		<script>
@@ -66,9 +58,6 @@
 			alert("${param.error}");
 		</c:if>
 		</script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-			crossorigin="anonymous">
-	</script>
+		<script type="text/javascript" src="./js/script.js"></script>
 </body>
 </html>
